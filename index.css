@@ -1,0 +1,27 @@
+div#enterContainer{
+	width: 450px;
+	border: 2px solid chocolate;
+	text-align: right;
+	margin-bottom: 4px;
+}
+ .enterData{
+  margin-right: 3px;
+  margin-top: 2px;
+ }
+	div#resultContainer{
+		width: 450px;
+		border: 2px solid chocolate;
+		margin-top: 4px;
+	}
+	.calculate{
+		background: green;
+		height: 30px;
+	}
+	.remember{
+		background: orange;
+		height: 30px;
+	}
+	.next_year{
+		background: coral;
+		height: 30px;
+	}
