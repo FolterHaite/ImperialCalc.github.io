@@ -9,7 +9,7 @@
 
 <body>
     <h3>Данные некоего государства</h3>
-        <form  id="calculationForm" method="POST">
+        <form  id="calculationForm" name="form1" method="POST">
             <p>Введите данные в поля. При дробном числе вводите точку, а не запятую<br>
             <div id="enterContainer">
                 <div>
@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <label for="popGrowth"> Процент роста населения:</label>
-                    <input id="popGrowth" type="text" name="num3" step="0.01" min="0" max="10" size="15" class="enterData" pattern="[0-9.,]+" required>
+                    <input id="popGrowth" type="text" name="num3" step="0.01" min="0" max="10" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -27,7 +27,7 @@
 
                 <div>
                     <label for="agriculture">Сельхоз оборот:</label>
-                    <input id="agriculture" type="text" name="num4" step="1" min="0" size="15" class="enterData" pattern="[0-9.,]+" required>
+                    <input id="agriculture" type="text" name="num4" step="1" min="0" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
@@ -170,7 +170,8 @@
  -->            <button type="button" class="remember" onclick="copyData(resultContainer)">Скопировать</button>
             <!-- <input type="button" id="niext" class="next_year" value="Следующий год" onclick="nextYear()"><br> -->
             <div id="resultContainer">
-                Год сбора: <output type="text" name="newYear" size="14"></output><br>
+<!--                 Год сбора: <output type="text" name="newYear" size="14"></output><br>
+ -->            
                 Текущее население: <output type="text" name="pop" size="14"></output><br>
                 Базовый доход: <output type="text" name="baseIncome" size="9"></output><br>
                 Административные расходы: <output type="text" name="AdminRash" size="8"></output><br>
@@ -182,11 +183,11 @@
                 Оборот торговли: <output type="text" name="nti5" size="10"></output><br>
                 Новая казна: <output type="text" name="fullBudget" size="10"></output><br>
             
-                 <h5>Производство вооружения:</h5>
+                 <!-- <h5>Производство вооружения:</h5>
                     max кол-во партий:  <output type="text" name="maxpart" size="10"></output><br>
                     Объём:  <output type="text" name="v" size="10"></output><br>
                     Цена:  <output type="text" name="cena" size="10"></output><br>
-                    Стоимость:  <output type="text" name="sto" size="10"></output><br>
+                    Стоимость:  <output type="text" name="sto" size="10"></output><br> -->
             
             </div>
             <br>

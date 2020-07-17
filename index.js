@@ -1,51 +1,54 @@
 $(document).ready(function () {
-    $('#calculationForm').submit(function () {
-        var d = document;
-        var a1 = Number(d.form1.num1.value);//население
-        var a2 = Number(d.form1.num3.value);//рост
-        var a14 = Number(d.form1.num2.value);//Централизация
-        var shob = Number(d.form1.num4.value);//СХ оборот
-        var a4 = Number(d.form1.num5.value);//эффективность управления(%)
-        var a5 = Number(d.form1.num6.value);//Сельский налог (%)
-        var a6 = Number(d.form1.num7.value);//оборот добычи
+    $('#calculationForm').submit(function (e) {
+        e.preventDefault();
+
+        var frm = $('form[name="form1"]');
+        parseInt($("input[name=num1]").val(), 10)
+        var a1 =  parseInt($("input[name=num1]").val(), 10);//население
+        var a2 =  parseInt($("input[name=num3]").val(), 10);//рост
+        var a14 =  parseInt($("input[name=num2]").val(), 10);//Централизация
+        var shob = parseInt($("input[name=num4]").val(), 10);//СХ оборот
+        var a4 = parseInt($("input[name=num5]").val(), 10);//эффективность управления(%)
+        var a5 = parseInt($("input[name=num6]").val(), 10);//Сельский налог (%)
+        var a6 = parseInt($("input[name=num7]").val(), 10);//оборот добычи
         var a7 = a4;//эффективность добычи
-        var a8 = Number(d.form1.num9.value);//%налога добычи
+        var a8 = parseInt($("input[name=num9]").val(), 10);//%налога добычи
 
         var p = a1 * (a2 *0.01) + a1;      //новое население
 
-        var a9 = Number(d.form1.num10.value);//оборот производства
+        var a9 = parseInt($("input[name=num10]").val(), 10);//оборот производства
         var a10 = a4;//эффективность производства
-        var a11 = Number(d.form1.num12.value);//Налог с производства
+        var a11 = parseInt($("input[name=num12]").val(), 10);//Налог с производства
 
 
-        var a12 = Number(d.form1.num13.value);//Оборот сферы услуг
+        var a12 = parseInt($("input[name=num13]").val(), 10);//Оборот сферы услуг
         var a13 = a4;//эффективность сферы услуг
-        var nsu = Number(d.form1.nsu.value);//Налог сферы услуг
-        var posh = Number(d.form1.posh.value);
-        var oe = Number(d.form1.oe.value);//Открытость экономики
+        var nsu = parseInt($("input[name=nsu]").val(), 10);//Налог сферы услуг
+        var posh = parseInt($("input[name=posh]").val(), 10);
+        var oe = parseInt($("input[name=oe]").val(), 10);//Открытость экономики
 
         var a15 = 0.1;//Базовый прирост
-        var a17 = Number(d.form1.num17.value);//Грамотность
-        var a18 = Number(d.form1.num18.value);//Доля людей с высшим образованием
-        var a19 = Number(d.form1.num19.value);//Технологичность
-        var a22 = Number(d.form1.num22.value);//Рентабельность
-        var y = Number(d.form1.num20.value);//Год подсчета доходов
-        var balance = Number(d.form1.balance.value); //Старая казна
+        var a17 = parseInt($("input[name=num17]").val(), 10);//Грамотность
+        var a18 = parseInt($("input[name=num18]").val(), 10);//Доля людей с высшим образованием
+        var a19 = parseInt($("input[name=num19]").val(), 10);//Технологичность
+        var a22 = parseInt($("input[name=num22]").val(), 10);//Рентабельность
+        var y = parseInt($("input[name=num20]").val(), 10);//Год подсчета доходов
+        var balance = parseInt($("input[name=balance]").val(), 10); //Старая казна
 
-        var part = Number(d.form1.part.value);
-        var vc = Number(d.form1.vc.value);
-        var bonus = Number(d.form1.bonus.value);
-        var q = Number(d.form1.q.value);
+        var part = parseInt($("input[name=part]").val(), 10);
+        var vc = parseInt($("input[name=vc]").val(), 10);
+        var bonus = parseInt($("input[name=bonus]").val(), 10);
+        var q = parseInt($("input[name=q]").val(), 10);
  
         var v = part*(1+bonus/100)*q*(1+a19/100);
         var cena = vc*(1-(part/100+bonus/250));
         var maxpart = 10*(1+a19/100+a22/100+a18/100);
         var sto = v*cena;
 
-        var sud1 = Number(d.form1.sud1.value);
-        var sud2 = Number(d.form1.sud2.value);
-        var sud3 = Number(d.form1.sud3.value);
-        var sud4 = Number(d.form1.sud4.value);
+        var sud1 = parseInt($("input[name=sud1]").val(), 10);
+        var sud2 = parseInt($("input[name=sud2]").val(), 10);
+        var sud3 = parseInt($("input[name=sud3]").val(), 10);
+        var sud4 = parseInt($("input[name=sud4]").val(), 10);
 
 
         var t = shob*a5/100*a14/100*a4/100+a6*a7/100*a8/100*a14/100+a9*a10/100*a11/100*a14/100+a12*a13/100*nsu/100*(a14/100)+(shob+a6+a9+a12)*(oe/100)*(a14/100)*posh/100*a4/100;   //Базовый доход
@@ -88,23 +91,23 @@ $(document).ready(function () {
         //ВЫВОДНЫЕ ДАННЫЕ//
         ////////////////////////////////////////////////////////////
 
-        d.form1.pop.value = p;
-        d.form1.baseIncome.value = t;
-        d.form1.AdminRash.value = rash;
-        d.form1.income.value = inc;
-        d.form1.fullBudget.value = fb;
-        d.form1.newYear.value=y;
-        d.form1.nti1.value=nti1;
-        d.form1.nti2.value=nti2;
-        d.form1.nti3.value=nti3;
-        d.form1.nti4.value=nti4;
-        d.form1.nti5.value=nti5;
+        $("output[name=pop]").val(p);
+        $("output[name=baseIncome]").val(t);
+        $("output[name=AdminRash]").val(rash);
+        $("output[name=income]").val(inc);
+        /* frm.fullBudget.value = fb; */ $("output[name=fullBudget]").val(fb);
+        /* frm.newYear.value=y; $("output[name=newYear]").val(y); */
+        /*frm.nti1.value=nti1;*/ $("output[name=nti1]").val(nti1);
+        /*frm.nti2.value=nti2;*/ $("output[name=nti2]").val(nti2);
+        /*frm.nti3.value=nti3;*/ $("output[name=nti3]").val(nti3);
+        /*frm.nti4.value=nti4;*/ $("output[name=nti4]").val(nti4);
+        /*frm.nti5.value=nti5;*/ $("output[name=nti5]").val(nti5);
         
-        d.form1.cena.value=cena;
-        d.form1.sto.value=sto;
-        d.form1.v.value=v;  
+/*         frm.cena.value=cena; 
+        frm.sto.value=sto;
+        frm.v.value=v;  
 
-        d.form1.maxpart.value=maxpart;  
+        frm.maxpart.value=maxpart;   */
  
         var rash = rash1+rash2+rash3+rash4+rash5; //адм расходы
 
@@ -126,21 +129,23 @@ $(document).ready(function () {
         rash = rash ^ 0;
         inc = inc ^ 0;
 
-        d.form1.pop.value = p;
-        d.form1.baseIncome.value = t;
-        d.form1.AdminRash.value = rash;
-        d.form1.income.value = inc;
-        d.form1.fullBudget.value = fb;
-        d.form1.newYear.value=y;
-        d.form1.nti1.value=nti1;
-        d.form1.nti2.value=nti2;
-        d.form1.nti3.value=nti3;
-        d.form1.nti4.value=nti4;
-        d.form1.nti5.value=nti5;
-        d.form1.cena.value=cena;
-        d.form1.sto.value=sto;
-        d.form1.v.value=v;
-        d.form1.maxpart.value=maxpart;
+        $("output[name=pop]").val(p);
+        $("output[name=baseIncome]").val(t);
+        $("output[name=AdminRash]").val(rash);
+        $("output[name=income]").val(inc);
+        /* frm.fullBudget.value = fb; */ $("output[name=fullBudget]").val(fb);
+        /* frm.newYear.value=y; $("output[name=newYear]").val(y); */
+        /*frm.nti1.value=nti1;*/ $("output[name=nti1]").val(nti1);
+        /*frm.nti2.value=nti2;*/ $("output[name=nti2]").val(nti2);
+        /*frm.nti3.value=nti3;*/ $("output[name=nti3]").val(nti3);
+        /*frm.nti4.value=nti4;*/ $("output[name=nti4]").val(nti4);
+        /*frm.nti5.value=nti5;*/ $("output[name=nti5]").val(nti5);
+ /*        frm.cena.value=cena;
+        frm.sto.value=sto;
+        frm.v.value=v;
+        frm.maxpart.value=maxpart; */
+
+
 });
 
 /* var allowedKeyCodes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 188, 190]
