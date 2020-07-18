@@ -14,12 +14,12 @@
             <div id="enterContainer">
                 <div>
                     <label for="population">Население:</label>
-                    <input id="population" type="text" name="num1" step="1" size="15" class="enterData" required>
+                    <input id="population" type="text" name="popInput" step="1" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="popGrowth"> Процент роста населения:</label>
-                    <input id="popGrowth" type="text" name="num3" step="0.01" min="0" max="10" size="15" class="enterData" required>
+                    <input id="popGrowth" type="text" name="popGrowthInput" step="0.01" min="0" max="10" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -27,17 +27,17 @@
 
                 <div>
                     <label for="agriculture">Сельхоз оборот:</label>
-                    <input id="agriculture" type="text" name="num4" step="1" min="0" size="15" class="enterData" required>
+                    <input id="agriculture" type="text" name="agriInput" step="1" min="0" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="agriTax"> Сельский налог, %:</label>
-                    <input id="agriTax" type="text" name="num6" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="agriTax" type="text" name="agriTaxInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="agriGrowth">Судейский прирост, %:</label>
-                    <input id="agriGrowth" type="text" name="sud1" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="agriGrowth" type="text" name="agriGrowthInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -45,17 +45,17 @@
 
                 <div>
                     <label for="raw">Оборот добычи:</label>
-                    <input id="raw" type="text" name="num7" step="1" min="0" size="15" class="enterData" required>
+                    <input id="raw" type="text" name="rawExInput" step="1" min="0" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="rawTax">Налог от добычи, %:</label>
-                    <input id="rawTax" type="text" name="num9" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="rawTax" type="text" name="rawExTaxInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="rawGrowth">Судейский прирост, %:</label>
-                    <input id="rawGrowth" type="text" name="sud2" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="rawGrowth" type="text" name="rawExGrowthInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -63,17 +63,17 @@
 
                 <div>
                     <label for="industry"> Оборот производства:</label>
-                    <input id="industry" type="text" name="num10" step="1" min="0" size="15" class="enterData" required>
+                    <input id="industry" type="text" name="indInput" step="1" min="0" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="indTax">Налог с производства, %:</label>
-                    <input id="indTax" type="text" name="num12" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="indTax" type="text" name="indTaxInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="indGrowth">Судейский прирост, %:</label>
-                    <input id="indGrowth" type="text" name="sud3" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="indGrowth" type="text" name="indGrowthInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -81,17 +81,17 @@
 
                 <div>
                     <label for="services"> Оборот сферы услуг:</label>
-                    <input id="services" type="text" name="num13" step="1" min="0" size="15" class="enterData" required>
+                    <input id="services" type="text" name="servInput" step="1" min="0" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="servTax">Налог сферы услуг, %:</label>
-                    <input id="servTax" type="text" name="nsu" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="servTax" type="text" name="servTaxInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="servGrowth">Судейский прирост, %:</label>
-                    <input id="servGrowth" type="text" name="sud4" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="servGrowth" type="text" name="servGrowthInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -99,12 +99,12 @@
 
                 <div>
                     <label for="toll">Пошлина, %:</label>
-                    <input id="toll" type="text" name="posh" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="toll" type="text" name="tollInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="econOpennes">Открытость экономики, %:</label>
-                    <input id="econOpennes" type="text" name="oe" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="econOpennes" type="text" name="econOpenInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -112,12 +112,12 @@
 
                 <div>
                     <label for="literacy">Грамотность, %:</label>
-                    <input id="literacy" type="text" name="num17" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="literacy" type="text" name="literacyInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="higherEd">Доля людей с высш. образ., %:</label>
-                    <input id="higherEd" type="text" name="num18" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="higherEd" type="text" name="higherEdInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
@@ -125,53 +125,39 @@
 
                 <div>
                     <label for="manufacturability">Технологичность, %:</label>
-                    <input id="manufacturability" type="text" name="num19" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="manufacturability" type="text" name="manufactInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="profitability">Рентабельность, %:</label>
-                    <input id="profitability" type="text" name="num22" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="profitability" type="text" name="profitInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="centralisation">Централизация, %:</label>
-                    <input id="centralisation" type="text" name="num2" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="centralisation" type="text" name="centrInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
                 <div>
                     <label for="efficiency">Эффективность управления, %:</label>
-                    <input id="efficiency" type="text" name="num5" step="0.01" min="0" max="100" size="15" class="enterData" required>
+                    <input id="efficiency" type="text" name="efficiencyInput" step="0.01" min="0" max="100" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
                 <p>&nbsp;</p>
 
-
-<!--                 <div>
-                    <label for="startingYear"> Год изначального подсчета:</label>
-                    <input id="startingYear" type="number" name="num20" step="1" min="0" size="15" class="enterData">
-                    <span class="validity"></span>
-                </div> -->
                 <div>
                     <label for="prevAmount"> Старая казна:</label>
-                    <input id="prevAmount" type="text" name="balance" step="1" min="0" size="15" class="enterData" required>
+                    <input id="prevAmount" type="text" name="prevAmountInput" step="1" min="0" size="15" class="enterData" required>
                     <span class="validity"></span>
                 </div>
 
-<!--    Судя по всему, неактуально             
-                <h5>Производство вооружения</h5>
-                Бонус специалитета:  <input type="text" name="bonus" size="15" class="enterData"><br>
-                Кол-во партий: <input type="text" name="part" size="15" class="enterData"><br>
-                Базовая цена: <input type="text" name="vc" size="15" class="enterData"><br>
-                Кол-во ед. в партии: <input type="text" name="q" size="15" class="enterData"><br> -->
             </div>
+
             <input type="submit" value="Рассчитать" class="calculate" id="btn-calculate">
-<!--             <input type="button" class="calculate" value="Рассчитать" onclick="summary()">
- -->            <button type="button" class="remember" onclick="copyData(resultContainer)">Скопировать</button>
-            <!-- <input type="button" id="niext" class="next_year" value="Следующий год" onclick="nextYear()"><br> -->
-            <div id="resultContainer">
-<!--                 Год сбора: <output type="text" name="newYear" size="14"></output><br>
- -->            
+            <button type="button" class="remember" onclick="copyData(resultContainer)">Скопировать</button>
+
+            <div id="resultContainer">  
                 Текущее население: <output type="text" name="pop" size="14"></output><br>
                 Базовый доход: <output type="text" name="baseIncome" size="9"></output><br>
                 Административные расходы: <output type="text" name="AdminRash" size="8"></output><br>
@@ -181,14 +167,7 @@
                 Новый оборот производства:<output type="text" name="nti3" size="10"></output><br>
                 Новый оборот услуг:    <output type="text" name="nti4" size="10"></output><br>
                 Оборот торговли: <output type="text" name="nti5" size="10"></output><br>
-                Новая казна: <output type="text" name="fullBudget" size="10"></output><br>
-            
-                 <!-- <h5>Производство вооружения:</h5>
-                    max кол-во партий:  <output type="text" name="maxpart" size="10"></output><br>
-                    Объём:  <output type="text" name="v" size="10"></output><br>
-                    Цена:  <output type="text" name="cena" size="10"></output><br>
-                    Стоимость:  <output type="text" name="sto" size="10"></output><br> -->
-            
+                Новая казна: <output type="text" name="fullBudget" size="10"></output><br>     
             </div>
             <br>
         </form>

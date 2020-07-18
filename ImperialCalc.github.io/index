@@ -9,12 +9,12 @@
         ///////////////////////////////////////////////////////////////
         function summary() {
             var d = document;
-            var a1 = Number(d.form1.num1.value);//население
-            var a2 = Number(d.form1.num3.value);//рост
+            var a1 = Number(d.form1.popInput.value);//население
+            var a2 = Number(d.form1.popGrowthInput.value);//рост
             var a14 = Number(d.form1.num2.value);//Централизация
-            var shob = Number(d.form1.num4.value);//СХ оборот
+            var shob = Number(d.form1.agriInput.value);//СХ оборот
             var a4 = Number(d.form1.num5.value);//эффективность управления(%)
-            var a5 = Number(d.form1.num6.value);//Сельский налог (%)
+            var a5 = Number(d.form1.agriTaxInput.value);//Сельский налог (%)
             var a6 = Number(d.form1.num7.value);//оборот добычи
             var a7 = a4;//эффективность добычи
             var a8 = Number(d.form1.num9.value);//%налога добычи
@@ -232,12 +232,12 @@
         
     <div id="enterContainer">
         <!--var d = document;
-            var nas = Number(d.form1.num1.value);//население
-            var rost = Number(d.form1.num3.value);//рост
+            var nas = Number(d.form1.popInput.value);//население
+            var rost = Number(d.form1.popGrowthInput.value);//рост
             var a14 = Number(d.form1.num2.value);//Централизация
-            var shob = Number(d.form1.num4.value);//СХ оборот
+            var shob = Number(d.form1.agriInput.value);//СХ оборот
             var a4 = Number(d.form1.num5.value);//эффективность управления(%)
-            var a5 = Number(d.form1.num6.value);//Сельский налог (%)
+            var a5 = Number(d.form1.agriTaxInput.value);//Сельский налог (%)
             var a6 = Number(d.form1.num7.value);//оборот добычи
             var a7 = Number(d.form1.num8.value);//эффективность добычи
             var a8 = Number(d.form1.num9.value);//%налога добычи
@@ -276,10 +276,10 @@
             var posh = d.form1.posh.value;
 
             var balance = Number(d.form1.balance.value); //Старая казна-->
-Население:                   <input type="text" name="num1" size="15" class="enterData"><br>
-Процент роста населения:     <input type="text" name="num3" size="15" class="enterData"><br><hr>
-Сельхоз оборот:             <input type="text" name="num4" size="15" class="enterData"><br>
-Сельский налог(%):               <input type="text" name="num6" size="15" class="enterData"><br>
+Население:                   <input type="text" name="popInput" size="15" class="enterData"><br>
+Процент роста населения:     <input type="text" name="popGrowthInput" size="15" class="enterData"><br><hr>
+Сельхоз оборот:             <input type="text" name="agriInput" size="15" class="enterData"><br>
+Сельский налог(%):               <input type="text" name="agriTaxInput" size="15" class="enterData"><br>
 Судейский прирост(%):            <input type="text" name="sud1" size="15" class="enterData"><br>
 Оборот добычи:               <input type="text" name="num7" size="15" class="enterData"><br>
 Налог от добычи(%):            <input type="text" name="num9" size="15" class="enterData"><br>
