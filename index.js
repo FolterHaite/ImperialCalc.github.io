@@ -92,7 +92,7 @@ $(document).ready(function () {
 
         /* вот ниже всё по второму кругу тупо идёт, это какой-то ритуал у него? t.Немиров */
  
-        var overallAdminExpense = adminExpense_agri+adminExpense_rawExtr+adminExpense_industry+adminExpense_services+adminExpense_exchange; //адм расходы
+/*         var overallAdminExpense = adminExpense_agri+adminExpense_rawExtr+adminExpense_industry+adminExpense_services+adminExpense_exchange; //адм расходы
 
         var overallIncome = baseIncome-overallAdminExpense;//Общий доход
         newAgriculture = agricult*(1+1*agriGrowth);// новые обороты
@@ -120,7 +120,7 @@ $(document).ready(function () {
         $("output[name=nti2]").val(newRawExtr);
         $("output[name=nti3]").val(newIndustry);
         $("output[name=nti4]").val(newServices);
-        $("output[name=nti5]").val(newExchange);
+        $("output[name=nti5]").val(newExchange); */
 
 
 });
