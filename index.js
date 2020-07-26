@@ -3,39 +3,39 @@ $(document).ready(function () {
         e.preventDefault();
 
         var population =  parseInt($("input[name=popInput]").val(), 10);//население
-        var popGrowth =  parseInt($("input[name=popGrowthInput]").val(), 10);//рост
-        var centralisation =  parseInt($("input[name=centrInput]").val(), 10);//Централизация
+        var popGrowth =  parseFloat($("input[name=popGrowthInput]").val());//рост
+        var centralisation =  parseFloat($("input[name=centrInput]").val());//Централизация
         var agricult = parseInt($("input[name=agriInput]").val(), 10);//СХ оборот
-        var efficiency = parseInt($("input[name=efficiencyInput]").val(), 10);//эффективность управления(%)
-        var agriTax = parseInt($("input[name=agriTaxInput]").val(), 10);//Сельский налог (%)
+        var efficiency = parseFloat($("input[name=efficiencyInput]").val());//эффективность управления(%)
+        var agriTax = parseFloat($("input[name=agriTaxInput]").val());//Сельский налог (%)
         var rawExtr = parseInt($("input[name=rawExInput]").val(), 10);//оборот добычи
         var rawExtrEfficiency = efficiency;//эффективность добычи
-        var rawExtrTax = parseInt($("input[name=rawExTaxInput]").val(), 10);//%налога добычи
+        var rawExtrTax = parseFloat($("input[name=rawExTaxInput]").val());//%налога добычи
 
         var newPopulation = population * (popGrowth * 0.01) + population;      //новое население
 
         var industry = parseInt($("input[name=indInput]").val(), 10);//оборот производства
         var industryEfficiency = efficiency;//эффективность производства
-        var industryTax = parseInt($("input[name=indTaxInput]").val(), 10);//Налог с производства
+        var industryTax = parseFloat($("input[name=indTaxInput]").val());//Налог с производства
 
 
         var services = parseInt($("input[name=servInput]").val(), 10);//Оборот сферы услуг
         var servicesEfficiency = efficiency;//эффективность сферы услуг
-        var servicesTax = parseInt($("input[name=servTaxInput]").val(), 10);//Налог сферы услуг
-        var tolls = parseInt($("input[name=tollInput]").val(), 10);
-        var econOpenness = parseInt($("input[name=econOpenInput]").val(), 10);//Открытость экономики
+        var servicesTax = parseFloat($("input[name=servTaxInput]").val());//Налог сферы услуг
+        var tolls = parseFloat($("input[name=tollInput]").val());
+        var econOpenness = parseFloat($("input[name=econOpenInput]").val());//Открытость экономики
 
         var basicGrowth = 0.1;//Базовый прирост
-        var literacy = parseInt($("input[name=literacyInput]").val(), 10);//Грамотность
-        var higherEdPercent = parseInt($("input[name=higherEdInput]").val(), 10);//Доля людей с высшим образованием
-        var manufacturability = parseInt($("input[name=manufactInput]").val(), 10);//Технологичность
-        var profitability = parseInt($("input[name=profitInput]").val(), 10);//Рентабельность
-        var oldBalance = parseInt($("input[name=prevAmountInput]").val(), 10); //Старая казна
+        var literacy = parseFloat($("input[name=literacyInput]").val());//Грамотность
+        var higherEdPercent = parseFloat($("input[name=higherEdInput]").val());//Доля людей с высшим образованием
+        var manufacturability = parseFloat($("input[name=manufactInput]").val());//Технологичность
+        var profitability = parseFloat($("input[name=profitInput]").val());//Рентабельность
+        var oldBalance = parseFloat($("input[name=prevAmountInput]").val()); //Старая казна
 
-        var agriGrowth_ref = parseInt($("input[name=agriGrowthInput]").val(), 10); //судейские приросты по отраслям
-        var rawExtGrowth_ref = parseInt($("input[name=rawExGrowthInput]").val(), 10);
-        var indGrowth_ref = parseInt($("input[name=indGrowthInput]").val(), 10);
-        var servGrowth_ref = parseInt($("input[name=servGrowthInput]").val(), 10);
+        var agriGrowth_ref = parseFloat($("input[name=agriGrowthInput]").val()); //судейские приросты по отраслям
+        var rawExtGrowth_ref = parseFloat($("input[name=rawExGrowthInput]").val());
+        var indGrowth_ref = parseFloat($("input[name=indGrowthInput]").val());
+        var servGrowth_ref = parseFloat($("input[name=servGrowthInput]").val());
 
 
         var baseIncome = agricult*agriTax/100*centralisation/100*efficiency/100+rawExtr*rawExtrEfficiency/100*rawExtrTax/100*centralisation/100+industry*industryEfficiency/100*industryTax/100*centralisation/100+services*servicesEfficiency/100*servicesTax/100*(centralisation/100)+(agricult+rawExtr+industry+services)*(econOpenness/100)*(centralisation/100)*tolls/100*efficiency/100;   //Базовый доход
@@ -102,7 +102,6 @@ $(document).ready(function () {
         newExchange = (newAgriculture+newRawExtr+newIndustry+newServices)*econOpenness; 
 
         newTreasury = oldBalance + overallIncome;                     //Новая казна
-        y=y+1;
         newTreasury = newTreasury ^ 0;// округление рабочее
         newPopulation = newPopulation ^ 0;  //население
         agriGrowth = agriGrowth ^ 0;  //РОСТЫ
