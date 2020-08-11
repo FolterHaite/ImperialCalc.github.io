@@ -128,7 +128,7 @@ $(document).ready(function () {
     // Не даёт ввести в инпуты всё кроме цифр и точек
     $('.enterData').on('change keyup', function() {
         // Remove invalid characters
-        var sanitized = $(this).val().replace(/[^0-9.]/g, '');
+        var sanitized = $(this).val().replace(/[^0-9.-]/g, '');
         sanitized = sanitized.replace(/\.(?=.*\.)/, '');
         // Update value
         $(this).val(sanitized);
