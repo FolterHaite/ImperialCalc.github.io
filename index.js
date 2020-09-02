@@ -32,9 +32,9 @@ $(document).ready(function () {
         var profitability = parseFloat($("input[name=profitInput]").val());//Рентабельность
         var oldBalance = parseFloat($("input[name=prevAmountInput]").val()); //Старая казна
         
-        var agrispets = parseFloat($("input[name=agrispets]").val());
-        var rawspets = parseFloat($("input[name=rawspets]").val());
-        var industryspets = parseFloat($("input[name=industryspets]").val());
+        var agrispets = parseFloat($("input[name=agrispetsInput]").val());
+        var rawspets = parseFloat($("input[name=rawspetsInput]").val());
+        var industryspets = parseFloat($("input[name=industryspetsInput]").val());
 
         var agriGrowth_ref = parseFloat($("input[name=agriGrowthInput]").val()); //судейские приросты по отраслям
         var rawExtGrowth_ref = parseFloat($("input[name=rawExGrowthInput]").val());
