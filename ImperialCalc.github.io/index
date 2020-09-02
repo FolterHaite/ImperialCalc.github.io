@@ -39,6 +39,10 @@
             var a22 = Number(d.form1.num22.value);//Рентабельность
             var y = Number(d.form1.num20.value);//Год подсчета доходов
             var balance = Number(d.form1.balance.value); //Старая казна
+	    
+	    var agrch = Number(d.form1.balance.value); // бонус аграрного специалитета
+	    var dobch = Number(d.form1.balance.value); // бонус добывающего специалитета
+	    var grach = Number(d.form1.balance.value); // бонус гражданско-промышленного специалитета
 
            var part = Number(d.form1.part.value);
            var vc = Number(d.form1.vc.value);
@@ -62,9 +66,9 @@
 
 
             var t = shob*a5/100*a14/100*a4/100+a6*a7/100*a8/100*a14/100+a9*a10/100*a11/100*a14/100+a12*a13/100*nsu/100*(a14/100)+(shob+a6+a9+a12)*(oe/100)*(a14/100)*posh/100*a4/100;   //Базовый доход
-            var ti1 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud1/100-a5/100; //СХ рост
-            var ti2 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud2/100-a8/100; //рост добычи
-            var ti3 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud3/100-a11/100; //рост производства
+            var ti1 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud1/100-a5/100+0.0084*(1.2)**agrch; //СХ рост
+            var ti2 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud2/100-a8/100+0.0059*(1.2)**dobch; //рост добычи
+            var ti3 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud3/100-a11/100+0.0059*(1.2)**grach; //рост производства
             var ti4 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud4/100-nsu/100; //рост услуги
 
             var ti5 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000-posh/100; //рост торговли
@@ -124,11 +128,11 @@
                 a1=p;
                 a18=fb;
 
-               p = a1 * (a2 *0.01) + a1;
+               p = a1 * (a2 *0.01+0.0042*1.2^agrch) + a1;
                var t = shob*a5/100*a14/100*a4/100+a6*a7/100*a8/100*a14/100+a9*a10/100*a11/100*a14/100+a12*a13/100*nsu/100*(a14/100)+(shob+a6+a9+a12)*(oe/100)*(a14/100)*posh/100*a4/100;   //Базовый доход
-            var ti1 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud1/100-a5/100; //СХ рост
-            var ti2 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud2/100-a8/100; //рост добычи
-            var ti3 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud3/100-a11/100; //рост производства
+            var ti1 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud1/100-a5/100+0.0084*(1.2)**agrch; //СХ рост
+            var ti2 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud2/100-a8/100+0.0059*(1.2)**dobch; //рост добычи
+            var ti3 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud3/100-a11/100+0.0059*(1.2)**grach; //рост производства
             var ti4 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000+sud4/100-nsu/100; //рост услуги
 
             var ti5 = a15+a17/50000+a18/5000+a19/5000+a22/5000+oe/5000-posh/100; //рост торговли
@@ -242,7 +246,7 @@
             var a7 = Number(d.form1.num8.value);//эффективность добычи
             var a8 = Number(d.form1.num9.value);//%налога добычи
 
-	        var p = a1 * (a2 *0.01) + a1;      //новое население
+	        var p = a1 * (a2 *0.01+0.0042*1.2^agrch) + a1;      //новое население
 
             var a9 = Number(d.form1.num10.value);//оборот производства
             var a10 = Number(d.form1.num11.value);//эффективность производства
@@ -266,6 +270,10 @@
             var sud2 = d.form1.sud2.value;
             var sud3 = d.form1.sud3.value;
             var sud4 = d.form1.sud4.value;
+	    
+	    var agrch = Number(d.form1.balance.value); // бонус аграрного специалитета
+	    var dobch = Number(d.form1.balance.value); // бонус добывающего специалитета
+	    var grach = Number(d.form1.balance.value); // бонус гражданско-промышленного специалитета
 
             var part = d.form1.part.value=part;
             var vc = d.form1.vc.value=vc; 
@@ -298,6 +306,9 @@
 Рентабельность:            <input type="text" name="num22" size="15" class="enterData"><br>
 Централизация(%):       <input type="text" name="num2" size="15" class="enterData"><br>
 Эффективность управления(%):    <input type="text" name="num5" size="15" class="enterData"><br>
+Кол-во аграрных спец-ов:    <input type="text" name="agrch" size="15" class="enterData"><br>
+Кол-во добывающих спец-ов:    <input type="text" name="dobch" size="15" class="enterData"><br>
+Кол-во гражд-пром спец-ов:    <input type="text" name="grach" size="15" class="enterData"><br>
 Год изначального подсчета: <input type="text" name="num20" size="15" class="enterData"><br>
 Старая казна:                <input type="text" name="balance" size="15" class="enterData"><br><br>
 <h5>Производство вооружения</h5>
