@@ -10,7 +10,7 @@ input[type=number] {
 
 
 div#enterContainer{
-	width: 600px;
+	width: 450px;
 	border: 2px solid chocolate;
 	text-align: right;
 	margin-bottom: 4px;
@@ -34,7 +34,7 @@ div#resultContainer {
 
 .remember {
 	background: orange;
-	height: 20px;
+	height: 30px;
 }
 
 .next_year {
