@@ -31,6 +31,10 @@ $(document).ready(function () {
         var manufacturability = parseFloat($("input[name=manufactInput]").val());//Технологичность
         var profitability = parseFloat($("input[name=profitInput]").val());//Рентабельность
         var oldBalance = parseFloat($("input[name=prevAmountInput]").val()); //Старая казна
+        
+        var agrispets = parseFloat($("input[name=agrispets]").val());
+        var rawspets = parseFloat($("input[name=rawspets]").val());
+        var industryspets = parseFloat($("input[name=industryspets]").val());
 
         var agriGrowth_ref = parseFloat($("input[name=agriGrowthInput]").val()); //судейские приросты по отраслям
         var rawExtGrowth_ref = parseFloat($("input[name=rawExGrowthInput]").val());
@@ -39,9 +43,9 @@ $(document).ready(function () {
 
 
         var baseIncome = agricult*agriTax/100*centralisation/100*efficiency/100+rawExtr*rawExtrEfficiency/100*rawExtrTax/100*centralisation/100+industry*industryEfficiency/100*industryTax/100*centralisation/100+services*servicesEfficiency/100*servicesTax/100*(centralisation/100)+(agricult+rawExtr+industry+services)*(econOpenness/100)*(centralisation/100)*tolls/100*efficiency/100;   //Базовый доход
-        var agriGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+agriGrowth_ref/100-agriTax/100; //СХ рост
-        var rawExtGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+rawExtGrowth_ref/100-rawExtrTax/100; //рост добычи
-        var industryGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+indGrowth_ref/100-industryTax/100; //рост производства
+        var agriGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+agriGrowth_ref/100-agriTax/100+0.0084*(1.2)**agrispets; //СХ рост
+        var rawExtGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+rawExtGrowth_ref/100-rawExtrTax/100+0.0059*(1.2)**rawspets; //рост добычи
+        var industryGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+indGrowth_ref/100-industryTax/100+0.0059*(1.2)**industryspets; //рост производства
         var serviceGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+servGrowth_ref/100-servicesTax/100; //рост услуги
 
         var exchangeGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000-tolls/100; //рост торговли
@@ -59,7 +63,7 @@ $(document).ready(function () {
         var newRawExtr = rawExtr*(1+1*rawExtGrowth);
         var newIndustry = industry*(1+1*industryGrowth);
         var newServices = services*(1+1*serviceGrowth);
-        var newExchange = (newAgriculture+newRawExtr+newIndustry+newServices)*econOpenness; //оборот торговли
+        var newExchange = (newAgriculture+newRawExtr+newIndustry+newServices)*econOpenness/100; //оборот торговли
         var newTreasury = oldBalance + overallIncome;//Новая казна
 
         // Задача - реализовать кнопку "следующий год"
