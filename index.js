@@ -12,8 +12,6 @@ $(document).ready(function () {
         var rawExtrEfficiency = efficiency;//эффективность добычи
         var rawExtrTax = parseFloat($("input[name=rawExTaxInput]").val());//%налога добычи
 
-        var newPopulation = population * (popGrowth * 0.01) + population;      //новое население
-
         var industry = parseInt($("input[name=indInput]").val(), 10);//оборот производства
         var industryEfficiency = efficiency;//эффективность производства
         var industryTax = parseFloat($("input[name=indTaxInput]").val());//Налог с производства
@@ -42,15 +40,56 @@ $(document).ready(function () {
         var servGrowth_ref = parseFloat($("input[name=servGrowthInput]").val());
         
         var a = 0 //константа для специалитетов агр
+        var ax = 1
+        var p = 0
+        var px = 0,5
         var r = 0 //константа для специалитетов доб
+        var rx = 0,7
         var i = 0 //константа для специалитетов инд
+        var ix = 0,7
         
-        //while (a < agriSpets) {a++;
+        If (agriSpets > 1) {
+                alter ( while (a < agriSpets) {
+            a++;
+            ax += ax**(a-1); } ) }
+            else (agriSpets == 1) {
+                alter (ax); }
+            else (agriSpets == 0); {
+                alter (ax = 0); }
+            
+         If (agriSpets > 1) {
+                alter ( while (p < agriSpets) {
+            p++;
+            px += px**(a-1); } ) }
+            else (agriSpets == 1) {
+                alter (px); }
+            else (agriSpets == 0); {
+                alter (px = 0); }
+        
+        If (indSpets > 1) {
+                alter ( while (a < indSpets) {
+            i++;
+            ix += ix**(a-1); } ) }
+            else (indSpets == 1) {
+                alter (ix); }
+            else (indSpets == 0); {
+                alter (ix = 0); }  
+        
+        If (rawSpets > 1) {
+                alter ( while (a < rawSpets) {
+            r++;
+            rx += rx**(a-1); } ) }
+            else (rawSpets == 1) {
+                alter (rx); }
+            else (rawSpets == 0); {
+                alter (rx = 0); } 
+        
+        var newPopulation = population * (popGrowth * 0.01+ px/100) + population;      //новое население
 
         var baseIncome = agricult*agriTax/100*centralisation/100*efficiency/100+rawExtr*rawExtrEfficiency/100*rawExtrTax/100*centralisation/100+industry*industryEfficiency/100*industryTax/100*centralisation/100+services*servicesEfficiency/100*servicesTax/100*(centralisation/100)+(agricult+rawExtr+industry+services)*(econOpenness/100)*(centralisation/100)*tolls/100*efficiency/100;   //Базовый доход
-        var agriGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+agriGrowth_ref/100-agriTax/100; //СХ рост
-        var rawExtGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+rawExtGrowth_ref/100-rawExtrTax/100; //рост добычи
-        var industryGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+indGrowth_ref/100-industryTax/100; //рост производства
+        var agriGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+agriGrowth_ref/100-agriTax/100+ax/100; //СХ рост
+        var rawExtGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+rawExtGrowth_ref/100-rawExtrTax/100+rx/100; //рост добычи
+        var industryGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+indGrowth_ref/100-industryTax/100+ix/100; //рост производства
         var serviceGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+servGrowth_ref/100-servicesTax/100; //рост услуги
 
         var exchangeGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000-tolls/100; //рост торговли
@@ -70,6 +109,7 @@ $(document).ready(function () {
         var newServices = services*(1+1*serviceGrowth);
         var newExchange = (newAgriculture+newRawExtr+newIndustry+newServices)*econOpenness/100; //оборот торговли
         var newTreasury = oldBalance + overallIncome;//Новая казна
+        var sciencePoints = newPopulation*(literacy/100)*0.00000035+newPopulation*(higherEdPercent/100)*0.0000083+(literacy+higherEdPercent)*(manufacturability/100)
 
         // Задача - реализовать кнопку "следующий год"
         // population=newPopulation; higherEdPercent=newTreasury; industryTax=baseIncome;
@@ -82,6 +122,7 @@ $(document).ready(function () {
         serviceGrowth = serviceGrowth ^ 0;
         overallAdminExpense = overallAdminExpense ^ 0;
         overallIncome = overallIncome ^ 0;
+        sciencePoints = sciencePoints ^ 0
 
         ////////////////////////////////////////////////////////////
         //ВЫВОДНЫЕ ДАННЫЕ//
@@ -98,6 +139,7 @@ $(document).ready(function () {
         $("output[name=nti3]").val(newIndustry);
         $("output[name=nti4]").val(newServices);
         $("output[name=nti5]").val(newExchange);
+        $("output[name=sciencePoints]").val(sciencePoints);
 
         /* вот ниже всё по второму кругу тупо идёт, это какой-то ритуал у него? t.Немиров */
  
