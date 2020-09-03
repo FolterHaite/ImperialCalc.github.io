@@ -54,9 +54,9 @@ $(document).ready(function () {
             ax += ax*0.6**(a-1); 
             } 
             }
-            else If (agriSpets == 1) {
+            else If (agriSpets = 1) {
                 ax=ax; 
-            } else {
+            } else If (agriSpets = 0) {
                 ax = 0; 
             }
           
@@ -66,9 +66,9 @@ $(document).ready(function () {
             p++;
             px += px*0.6**(a-1); 
             }  
-            } else If (agriSpets == 1) {
+            } else If (agriSpets = 1) {
                 px=px; 
-            } else {
+            } else If (agriSpets = 0) {
                 px = 0; 
             }
           
@@ -79,9 +79,9 @@ $(document).ready(function () {
             ix += ix*0.6**(a-1); 
                 }  
         }
-            else If (indSpets == 1) {
+            else If (indSpets = 1) {
                 ix=ix; 
-            } else {
+            } else If (indSpets = 0) {
                 ix = 0; 
             }
            
@@ -92,9 +92,9 @@ $(document).ready(function () {
             rx += rx*0.6**(a-1); 
             }  
             }
-            else If (rawSpets == 1) {
+            else If (rawSpets = 1) {
                 rx=rx; 
-            } else {
+            } else If (indSpets = 0) {
                 rx = 0; 
             }
            
