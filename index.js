@@ -53,8 +53,7 @@ $(document).ready(function () {
             a++;
             ax += ax*0.6**(a-1); 
             } 
-            }
-            else If (agriSpets = 1) {
+            } else If (agriSpets = 1) {
                 ax=ax; 
             } else If (agriSpets = 0) {
                 ax = 0; 
@@ -78,8 +77,7 @@ $(document).ready(function () {
             i++;
             ix += ix*0.6**(a-1); 
                 }  
-        }
-            else If (indSpets = 1) {
+            } else If (indSpets = 1) {
                 ix=ix; 
             } else If (indSpets = 0) {
                 ix = 0; 
@@ -91,8 +89,7 @@ $(document).ready(function () {
             r++;
             rx += rx*0.6**(a-1); 
             }  
-            }
-            else If (rawSpets = 1) {
+            } else If (rawSpets = 1) {
                 rx=rx; 
             } else If (indSpets = 0) {
                 rx = 0; 
