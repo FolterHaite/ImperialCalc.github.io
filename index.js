@@ -49,40 +49,55 @@ $(document).ready(function () {
         var ix = 0,7;
         
         If (agriSpets > 1) {
-                alter ( while (a < agriSpets) {
+                while (a < agriSpets) {
             a++;
-            ax += ax**(a-1); } ) }
-            else (agriSpets == 1) {
-                alter (ax); }
-            else (agriSpets == 0); {
-                alter (ax = 0); }
+            ax += ax*0.6**(a-1); 
+            } 
+            }
+            else { If (agriSpets == 1) {
+                ax=ax; 
+            } else {
+                ax = 0; 
+            }
+            }
             
          If (agriSpets > 1) {
-                alter ( while (p < agriSpets) {
+                 while (p < agriSpets) {
             p++;
-            px += px*0.6**(a-1); } ) }
-            else (agriSpets == 1) {
-                alter (px); }
-            else (agriSpets == 0); {
-                alter (px = 0); }
+            px += px*0.6**(a-1); 
+            }  
+            } else  { If (agriSpets == 1) {
+                px=px; 
+            } else {
+                px = 0; 
+            }
+            }
         
         If (indSpets > 1) {
-                alter ( while (a < indSpets) {
+                while (a < indSpets) {
             i++;
-            ix += ix*0.6**(a-1); } ) }
-            else (indSpets == 1) {
-                alter (ix); }
-            else (indSpets == 0); {
-                alter (ix = 0); }  
+            ix += ix*0.6**(a-1); 
+                }  
+        }
+            else { If (indSpets == 1) {
+                ix=ix; 
+            } else {
+                ix = 0; 
+            }
+            }
         
         If (rawSpets > 1) {
-                alter ( while (a < rawSpets) {
+                while (a < rawSpets) {
             r++;
-            rx += rx*0.6**(a-1); } ) }
-            else (rawSpets == 1) {
-                alter (rx); }
-            else (rawSpets == 0); {
-                alter (rx = 0); } 
+            rx += rx*0.6**(a-1); 
+                }  
+        }
+            else { If (rawSpets == 1) {
+                rx=rx; 
+            } else {
+                rx = 0; 
+            }
+            }
         
         var newPopulation = population * (popGrowth * 0.01+ px/100) + population;      //новое население
 
@@ -140,39 +155,6 @@ $(document).ready(function () {
         $("output[name=nti4]").val(newServices);
         $("output[name=nti5]").val(newExchange);
         $("output[name=sciencePoints]").val(sciencePoints);
-
-        /* вот ниже всё по второму кругу тупо идёт, это какой-то ритуал у него? t.Немиров */
- 
-/*         var overallAdminExpense = adminExpense_agri+adminExpense_rawExtr+adminExpense_industry+adminExpense_services+adminExpense_exchange; //адм расходы
-
-        var overallIncome = baseIncome-overallAdminExpense;//Общий доход
-        newAgriculture = agricult*(1+1*agriGrowth);// новые обороты
-        newRawExtr = rawExtr*(1+1*rawExtGrowth);
-        newIndustry = industry*(1+1*industryGrowth);
-        newServices = services*(1+1*serviceGrowth);
-        newExchange = (newAgriculture+newRawExtr+newIndustry+newServices)*econOpenness; 
-
-        newTreasury = oldBalance + overallIncome;                     //Новая казна
-        newTreasury = newTreasury ^ 0;// округление рабочее
-        newPopulation = newPopulation ^ 0;  //население
-        agriGrowth = agriGrowth ^ 0;  //РОСТЫ
-        rawExtGrowth = rawExtGrowth ^ 0;
-        industryGrowth = industryGrowth ^ 0;
-        serviceGrowth = serviceGrowth ^ 0;
-        overallAdminExpense = overallAdminExpense ^ 0;
-        overallIncome = overallIncome ^ 0;
-
-        $("output[name=pop]").val(newPopulation);
-        $("output[name=baseIncome]").val(baseIncome);
-        $("output[name=AdminRash]").val(overallAdminExpense);
-        $("output[name=income]").val(overallIncome);
-        $("output[name=fullBudget]").val(newTreasury);
-        $("output[name=nti1]").val(newAgriculture);
-        $("output[name=nti2]").val(newRawExtr);
-        $("output[name=nti3]").val(newIndustry);
-        $("output[name=nti4]").val(newServices);
-        $("output[name=nti5]").val(newExchange); */
-
 
 });
 
