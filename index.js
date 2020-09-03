@@ -60,7 +60,7 @@ $(document).ready(function () {
          If (agriSpets > 1) {
                 alter ( while (p < agriSpets) {
             p++;
-            px += px**(a-1); } ) }
+            px += px*0.6**(a-1); } ) }
             else (agriSpets == 1) {
                 alter (px); }
             else (agriSpets == 0); {
@@ -69,7 +69,7 @@ $(document).ready(function () {
         If (indSpets > 1) {
                 alter ( while (a < indSpets) {
             i++;
-            ix += ix**(a-1); } ) }
+            ix += ix*0.6**(a-1); } ) }
             else (indSpets == 1) {
                 alter (ix); }
             else (indSpets == 0); {
@@ -78,7 +78,7 @@ $(document).ready(function () {
         If (rawSpets > 1) {
                 alter ( while (a < rawSpets) {
             r++;
-            rx += rx**(a-1); } ) }
+            rx += rx*0.6**(a-1); } ) }
             else (rawSpets == 1) {
                 alter (rx); }
             else (rawSpets == 0); {
