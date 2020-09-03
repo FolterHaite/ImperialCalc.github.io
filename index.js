@@ -31,12 +31,21 @@ $(document).ready(function () {
         var manufacturability = parseFloat($("input[name=manufactInput]").val());//Технологичность
         var profitability = parseFloat($("input[name=profitInput]").val());//Рентабельность
         var oldBalance = parseFloat($("input[name=prevAmountInput]").val()); //Старая казна
+        
+         var agriSpets = parseFloat($("input[name=agriSpetsInput]").val());
+        var rawSpets = parseFloat($("input[name=rawSpetsInput]").val());
+        var indSpets = parseFloat($("input[name=indSpetsInput]").val());
 
         var agriGrowth_ref = parseFloat($("input[name=agriGrowthInput]").val()); //судейские приросты по отраслям
         var rawExtGrowth_ref = parseFloat($("input[name=rawExGrowthInput]").val());
         var indGrowth_ref = parseFloat($("input[name=indGrowthInput]").val());
         var servGrowth_ref = parseFloat($("input[name=servGrowthInput]").val());
-
+        
+        var a = 0 //константа для специалитетов агр
+        var r = 0 //константа для специалитетов доб
+        var i = 0 //константа для специалитетов инд
+        
+        //while (a < agriSpets) {a++;
 
         var baseIncome = agricult*agriTax/100*centralisation/100*efficiency/100+rawExtr*rawExtrEfficiency/100*rawExtrTax/100*centralisation/100+industry*industryEfficiency/100*industryTax/100*centralisation/100+services*servicesEfficiency/100*servicesTax/100*(centralisation/100)+(agricult+rawExtr+industry+services)*(econOpenness/100)*(centralisation/100)*tolls/100*efficiency/100;   //Базовый доход
         var agriGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+agriGrowth_ref/100-agriTax/100; //СХ рост
