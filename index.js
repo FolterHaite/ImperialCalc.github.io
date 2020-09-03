@@ -91,7 +91,7 @@ $(document).ready(function () {
             }  
             } else If (rawSpets = 1) {
                 rx=rx; 
-            } else If (indSpets = 0) {
+            } else If (rawSpets = 0) {
                 rx = 0; 
             }
            
