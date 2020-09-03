@@ -39,14 +39,14 @@ $(document).ready(function () {
         var indGrowth_ref = parseFloat($("input[name=indGrowthInput]").val());
         var servGrowth_ref = parseFloat($("input[name=servGrowthInput]").val());
         
-        var a = 0 //константа для специалитетов агр
-        var ax = 1
-        var p = 0
-        var px = 0,5
-        var r = 0 //константа для специалитетов доб
-        var rx = 0,7
-        var i = 0 //константа для специалитетов инд
-        var ix = 0,7
+        var a = 0; //константа для специалитетов агр
+        var ax = 1;
+        var p = 0;
+        var px = 0,5;
+        var r = 0; //константа для специалитетов доб
+        var rx = 0,7;
+        var i = 0; //константа для специалитетов инд
+        var ix = 0,7;
         
         If (agriSpets > 1) {
                 alter ( while (a < agriSpets) {
