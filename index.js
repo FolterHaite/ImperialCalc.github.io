@@ -66,7 +66,7 @@ $(document).ready(function () {
             p++;
             px += px*0.6**(a-1); 
             }  
-            } else  If (agriSpets == 1) {
+            } else If (agriSpets == 1) {
                 px=px; 
             } else {
                 px = 0; 
@@ -90,8 +90,8 @@ $(document).ready(function () {
                 while (a < rawSpets) {
             r++;
             rx += rx*0.6**(a-1); 
-                }  
-        }
+            }  
+            }
             else If (rawSpets == 1) {
                 rx=rx; 
             } else {
