@@ -42,11 +42,11 @@ $(document).ready(function () {
         var a = 0; //константа для специалитетов агр
         var ax = 1;
         var p = 0;
-        var px = 0,5;
+        var px = 0.5;
         var r = 0; //константа для специалитетов доб
-        var rx = 0,7;
+        var rx = 0.7;
         var i = 0; //константа для специалитетов инд
-        var ix = 0,7;
+        var ix = 0.7;
         
         If (agriSpets > 1) {
                 while (a < agriSpets) {
@@ -54,24 +54,24 @@ $(document).ready(function () {
             ax += ax*0.6**(a-1); 
             } 
             }
-            else { If (agriSpets == 1) {
+            else If (agriSpets == 1) {
                 ax=ax; 
             } else {
                 ax = 0; 
             }
-            }
+          
             
          If (agriSpets > 1) {
                  while (p < agriSpets) {
             p++;
             px += px*0.6**(a-1); 
             }  
-            } else  { If (agriSpets == 1) {
+            } else  If (agriSpets == 1) {
                 px=px; 
             } else {
                 px = 0; 
             }
-            }
+          
         
         If (indSpets > 1) {
                 while (a < indSpets) {
@@ -79,12 +79,12 @@ $(document).ready(function () {
             ix += ix*0.6**(a-1); 
                 }  
         }
-            else { If (indSpets == 1) {
+            else If (indSpets == 1) {
                 ix=ix; 
             } else {
                 ix = 0; 
             }
-            }
+           
         
         If (rawSpets > 1) {
                 while (a < rawSpets) {
@@ -92,12 +92,12 @@ $(document).ready(function () {
             rx += rx*0.6**(a-1); 
                 }  
         }
-            else { If (rawSpets == 1) {
+            else If (rawSpets == 1) {
                 rx=rx; 
             } else {
                 rx = 0; 
             }
-            }
+           
         
         var newPopulation = population * (popGrowth * 0.01+ px/100) + population;      //новое население
 
