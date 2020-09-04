@@ -41,6 +41,7 @@ $(document).ready(function () {
         
         var a; //константа для специалитетов агр
         var ax = 1;
+        var p;
         var px = 0.5;
         var r; //константа для специалитетов доб
         var rx = 0.7;
@@ -54,6 +55,14 @@ $(document).ready(function () {
         if(agriSpets = 0)
         {
         ax = 0;
+        px = 0;
+        };
+        
+        for ( p = 0; a < agriSpets; p++) {
+        px += px*0.6**(p-1);
+        };
+        if(agriSpets = 0)
+        {
         px = 0;
         };
             
