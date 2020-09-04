@@ -48,54 +48,38 @@ $(document).ready(function () {
         var i = 0; //константа для специалитетов инд
         var ix = 0.7;
         
-        If (agriSpets > 1) {
-                while (a < agriSpets) {
-            a++;
-            ax += ax*0.6**(a-1); 
-            } 
-            } else If (agriSpets = 1) {
-                ax=ax; 
-            } else If (agriSpets = 0) {
-                ax = 0; 
-            }
+        for ( a = 0; a < agriSpets; a++) {
+        ax += ax * 0.6 ** (a - 1);
+        }
+        If(agriSpets = 0)
+        {
+        ax = 0;
+        }
           
+        for ( p = 0; a < agriSpets; p++) {
+        px += px * 0.6 ** (p - 1);
+        }
+        If(agriSpets = 0)
+        {
+        px = 0;
+        }
             
-         If (agriSpets > 1) {
-                 while (p < agriSpets) {
-            p++;
-            px += px*0.6**(a-1); 
-            }  
-            } else If (agriSpets = 1) {
-                px=px; 
-            } else If (agriSpets = 0) {
-                px = 0; 
-            }
+        for ( r = 0; a < rawSpets; r++) {
+        rx += rx * 0.6 ** (r - 1);
+        }
+        If(rawSpets = 0)
+        {
+        rx = 0;
+        }
           
-        
-        If (indSpets > 1) {
-                while (a < indSpets) {
-            i++;
-            ix += ix*0.6**(a-1); 
-                }  
-            } else If (indSpets = 1) {
-                ix=ix; 
-            } else If (indSpets = 0) {
-                ix = 0; 
-            }
+        for ( i = 0; a < indSpets; i++) {
+        ix += ix * 0.6 ** (i - 1);
+        }
+        If(indSpets = 0)
+        {
+        ix = 0;
+        }
            
-        
-        If (rawSpets > 1) {
-                while (a < rawSpets) {
-            r++;
-            rx += rx*0.6**(a-1); 
-            }  
-            } else If (rawSpets = 1) {
-                rx=rx; 
-            } else If (rawSpets = 0) {
-                rx = 0; 
-            }
-           
-        
         var newPopulation = population * (popGrowth * 0.01+ px/100) + population;      //новое население
 
         var baseIncome = agricult*agriTax/100*centralisation/100*efficiency/100+rawExtr*rawExtrEfficiency/100*rawExtrTax/100*centralisation/100+industry*industryEfficiency/100*industryTax/100*centralisation/100+services*servicesEfficiency/100*servicesTax/100*(centralisation/100)+(agricult+rawExtr+industry+services)*(econOpenness/100)*(centralisation/100)*tolls/100*efficiency/100;   //Базовый доход
