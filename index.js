@@ -39,17 +39,17 @@ $(document).ready(function () {
         var indGrowth_ref = parseFloat($("input[name=indGrowthInput]").val());
         var servGrowth_ref = parseFloat($("input[name=servGrowthInput]").val());
         
-        var a = 0; //константа для специалитетов агр
+        var a; //константа для специалитетов агр
         var ax = 1;
-        var p = 0;
+        var p;
         var px = 0.5;
-        var r = 0; //константа для специалитетов доб
+        var r; //константа для специалитетов доб
         var rx = 0.7;
-        var i = 0; //константа для специалитетов инд
+        var i; //константа для специалитетов инд
         var ix = 0.7;
         
         for ( a = 0; a < agriSpets; a++) {
-        ax += ax * 0.6 ** (a - 1);
+        ax += ax*0.6**(a-1);
         }
         If(agriSpets = 0)
         {
@@ -57,7 +57,7 @@ $(document).ready(function () {
         }
           
         for ( p = 0; a < agriSpets; p++) {
-        px += px * 0.6 ** (p - 1);
+        px += px*0.6**(p-1);
         }
         If(agriSpets = 0)
         {
@@ -65,7 +65,7 @@ $(document).ready(function () {
         }
             
         for ( r = 0; a < rawSpets; r++) {
-        rx += rx * 0.6 ** (r - 1);
+        rx += rx*0.6**(r-1);
         }
         If(rawSpets = 0)
         {
@@ -73,7 +73,7 @@ $(document).ready(function () {
         }
           
         for ( i = 0; a < indSpets; i++) {
-        ix += ix * 0.6 ** (i - 1);
+        ix += ix*0.6**(i-1);
         }
         If(indSpets = 0)
         {
@@ -118,7 +118,7 @@ $(document).ready(function () {
         serviceGrowth = serviceGrowth ^ 0;
         overallAdminExpense = overallAdminExpense ^ 0;
         overallIncome = overallIncome ^ 0;
-        sciencePoints = sciencePoints ^ 0
+        sciencePoints = sciencePoints ^ 0;
 
         ////////////////////////////////////////////////////////////
         //ВЫВОДНЫЕ ДАННЫЕ//
