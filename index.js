@@ -80,7 +80,7 @@ $(document).ready(function () {
         ix = 0;
         };
            
-        var newPopulation = population * (popGrowth *0.01+px/100) + population;      //новое население
+        var newPopulation = population * ((popGrowth *0.01)+(px/100)) + population;      //новое население
 
         var baseIncome = agricult*agriTax/100*centralisation/100*efficiency/100+rawExtr*rawExtrEfficiency/100*rawExtrTax/100*centralisation/100+industry*industryEfficiency/100*industryTax/100*centralisation/100+services*servicesEfficiency/100*servicesTax/100*(centralisation/100)+(agricult+rawExtr+industry+services)*(econOpenness/100)*(centralisation/100)*tolls/100*efficiency/100;   //Базовый доход
         var agriGrowth = basicGrowth+literacy/50000+higherEdPercent/5000+manufacturability/5000+profitability/5000+econOpenness/5000+agriGrowth_ref/100-agriTax/100+ax/100; //СХ рост
