@@ -62,7 +62,7 @@ $(document).ready(function () {
         if(agriSpets = 0)
         {
         px = 0;
-        }
+        };
             
         for ( r = 0; r < rawSpets; r++) {
         rx += rx*0.6**(r-1);
