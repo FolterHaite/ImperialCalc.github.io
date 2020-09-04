@@ -51,31 +51,31 @@ $(document).ready(function () {
         for ( a = 0; a < agriSpets; a++) {
         ax += ax*0.6**(a-1);
         }
-        If(agriSpets = 0)
+        if(agriSpets = 0)
         {
         ax = 0;
         }
           
-        for ( p = 0; a < agriSpets; p++) {
+        for ( p = 0; p < agriSpets; p++) {
         px += px*0.6**(p-1);
         }
-        If(agriSpets = 0)
+        if(agriSpets = 0)
         {
         px = 0;
         }
             
-        for ( r = 0; a < rawSpets; r++) {
+        for ( r = 0; r < rawSpets; r++) {
         rx += rx*0.6**(r-1);
         }
-        If(rawSpets = 0)
+        if(rawSpets = 0)
         {
         rx = 0;
         }
           
-        for ( i = 0; a < indSpets; i++) {
+        for ( i = 0; i < indSpets; i++) {
         ix += ix*0.6**(i-1);
         }
-        If(indSpets = 0)
+        if(indSpets = 0)
         {
         ix = 0;
         }
