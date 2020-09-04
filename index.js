@@ -105,7 +105,7 @@ $(document).ready(function () {
         var newServices = services*(1+1*serviceGrowth);
         var newExchange = (newAgriculture+newRawExtr+newIndustry+newServices)*econOpenness/100; //оборот торговли
         var newTreasury = oldBalance + overallIncome;//Новая казна
-        var sciencePoints = newPopulation*(literacy/100)*0.00000035+newPopulation*(higherEdPercent/100)*0.0000083+(literacy+higherEdPercent)*(manufacturability/100)
+        var sciencePoints = newPopulation*(literacy/100)*0.00000035+newPopulation*(higherEdPercent/100)*0.0000083+(literacy+higherEdPercent)*(manufacturability/100);
 
         // Задача - реализовать кнопку "следующий год"
         // population=newPopulation; higherEdPercent=newTreasury; industryTax=baseIncome;
